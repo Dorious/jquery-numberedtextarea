@@ -11,7 +11,7 @@ $('#your_textarea').numberedtextarea();
 $('#your_textarea').numberedtextarea({
   color:        null,   // Font color
   borderColor:	null,   // Border color
-  class:			  null,   // Add class to the 'numberedtextarea-wrapper'
+  class:        null,   // Add class to the 'numberedtextarea-wrapper'
   allowTabChar: false,  // If true Tab key creates indentation
 });
 ```
