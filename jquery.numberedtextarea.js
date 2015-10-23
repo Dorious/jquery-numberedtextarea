@@ -80,7 +80,6 @@
         lineNumbers.css({
             paddingLeft: paddingLeft + 'px',
             paddingTop: paddingTop + 'px',
-            paddingBottom: paddingBottom + 'px',
             lineHeight: element.css('line-height'),
             fontFamily: element.css('font-family'),
             width: lineNumbers.width() - paddingLeft + 'px',
@@ -94,11 +93,16 @@
         
         var linesDiv = element.parent().find('.numberedtextarea-line-numbers');
         var count = element.val().split("\n").length;
+        var paddingBottom = parseFloat(element.css('padding-bottom'));
         
         linesDiv.find('.numberedtextarea-number').remove();
         
         for(i = 1; i<=count; i++) {
-            $('<div class="numberedtextarea-number numberedtextarea-number-' + i + '">' + i + '</div>').appendTo(linesDiv);
+            var line = $('<div class="numberedtextarea-number numberedtextarea-number-' + i + '">' + i + '</div>').appendTo(linesDiv);
+            
+            if(i === count) {
+            	line.css('margin-bottom', paddingBottom + 'px');
+            }
         }
     }
     
